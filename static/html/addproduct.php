@@ -40,9 +40,9 @@ session_start();
 
         <label for="productType">Type Switcher</label>
         <select name="productType" id="productType">
-            <option value="DVD" id="DVD" onclick="displayDVDForm()" selected>DVD</option>
-            <option value="Furniture" id="Furniture" onclick="displayFurnitureForm()">Furniture</option>
-            <option value="Book" id="Book" onclick="displayBookForm()">Book</option>
+            <option value="DVD" id="DVD" onselect="displayDVDForm()" selected>DVD</option>
+            <option value="Furniture" id="Furniture" onselect="displayFurnitureForm()">Furniture</option>
+            <option value="Book" id="Book" onselect="displayBookForm()">Book</option>
         </select>
         <div id="DVDForm">
             <label for="size">Size (MB)</label>
