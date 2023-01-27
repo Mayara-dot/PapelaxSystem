@@ -20,7 +20,7 @@ $height = isset($_POST['height']) ? $args['height'] = $_POST['height'] : null; /
 $width = isset($_POST['width']) ? $args['width'] = $_POST['width'] : null;//FURNITURE
 $length = isset($_POST['length']) ? $args['length'] = $_POST['length'] : null;//FURNITURE
 
-$type = $_POST['productType'];
+$type = isset($_POST['productType']) ? isset($_POST['productType']) : 'DVD';
 
 $Product = new Item();
 $Product->$type($DB->getConnection(), $args);
