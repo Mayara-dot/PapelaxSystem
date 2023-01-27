@@ -32,7 +32,7 @@ session_start();
     ?>
     <form action="/PHP/saveProduct.php" method="POST" id="product_form">
         <label for="sku">SKU</label>
-        <input type="text" name="sku" id="sku" required><br>
+        <input type="text" name="sku" id="sku" required maxlength="250"><br>
         <label for="name">Name</label>
         <input type="text" name="name" id="name" required><br>
         <label for="price">Price</label>

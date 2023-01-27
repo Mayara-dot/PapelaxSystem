@@ -12,11 +12,11 @@ class Item extends Product{
                 if (!empty($sku)) {
                     foreach ($sku as $record) {
                         mysqli_begin_transaction($conn);
-                        $queryDVD = "DELETE FROM SCANDIWEB.DVD
+                        $queryDVD = "DELETE FROM heroku_ec6c458e2e8f5f7.DVD
                         WHERE SKU = '{$record}';";
-                        $queryBook = "DELETE FROM SCANDIWEB.Book 
+                        $queryBook = "DELETE FROM heroku_ec6c458e2e8f5f7.Book 
                         WHERE SKU = '{$record}';";
-                        $queryFurniture = "DELETE FROM SCANDIWEB.Furniture 
+                        $queryFurniture = "DELETE FROM heroku_ec6c458e2e8f5f7.Furniture 
                         WHERE SKU = '{$record}';";
                         mysqli_query($conn, $queryDVD);
                         mysqli_query($conn, $queryBook);
@@ -36,11 +36,11 @@ class Item extends Product{
    
 	public function validateSKU($sku, $conn)
     {
-        $querySELECT = "SELECT COUNT(*) AS total FROM SCANDIWEB.DVD WHERE SKU = '{$sku}'
+        $querySELECT = "SELECT COUNT(*) AS total FROM heroku_ec6c458e2e8f5f7.DVD WHERE SKU = '{$sku}'
         UNION ALL
-        SELECT COUNT(*) AS total FROM SCANDIWEB.Furniture WHERE SKU = '{$sku}'
+        SELECT COUNT(*) AS total FROM heroku_ec6c458e2e8f5f7.Furniture WHERE SKU = '{$sku}'
         UNION ALL    
-        SELECT COUNT(*) AS total FROM SCANDIWEB.Book WHERE SKU = '{$sku}';";
+        SELECT COUNT(*) AS total FROM heroku_ec6c458e2e8f5f7.Book WHERE SKU = '{$sku}';";
         $result = mysqli_query($conn, $querySELECT);
         $row = mysqli_fetch_assoc($result);
         if ($row['total'] >= 1) {
@@ -65,7 +65,7 @@ class Item extends Product{
                 $name = mysqli_real_escape_string($conn, $DVD->getName());
                 $price = mysqli_real_escape_string($conn, $DVD->getPrice());
                 $size = mysqli_real_escape_string($conn, $DVD->getSize());
-                $queryINSERT = "INSERT INTO SCANDIWEB.DVD (SKU, name, price, size, date) VALUES ('{$sku}', '{$name}', {$price}, {$size}, NOW());";
+                $queryINSERT = "INSERT INTO heroku_ec6c458e2e8f5f7.DVD (SKU, name, price, size, date) VALUES ('{$sku}', '{$name}', {$price}, {$size}, NOW());";
                 $conn->query($queryINSERT);
                 $_SESSION['success'] = true;
                 header("Location: /");                
@@ -95,7 +95,7 @@ class Item extends Product{
                 $name = mysqli_real_escape_string($conn, $Book->getName());
                 $price = mysqli_real_escape_string($conn, $Book->getPrice());
                 $weight = mysqli_real_escape_string($conn, $Book->getWeight());
-                $queryINSERT  = "INSERT INTO SCANDIWEB.Book (SKU, name, price, weight, date) VALUES ('{$sku}', '{$name}', {$price}, {$weight}, NOW());";
+                $queryINSERT  = "INSERT INTO heroku_ec6c458e2e8f5f7.Book (SKU, name, price, weight, date) VALUES ('{$sku}', '{$name}', {$price}, {$weight}, NOW());";
                 $conn->query($queryINSERT);
                 $_SESSION['success'] = true;
                 header("Location: /");
@@ -128,7 +128,7 @@ class Item extends Product{
                 $height = mysqli_real_escape_string($conn, $Furniture->getHeight());
                 $width = mysqli_real_escape_string($conn, $Furniture->getWidth());
                 $length = mysqli_real_escape_string($conn, $Furniture->getLenght());
-                $queryINSERT  = "INSERT INTO SCANDIWEB.Furniture (SKU, name, price, height, width, length, date) VALUES ('{$sku}', '{$name}', {$price}, {$height}, {$width}, {$length}, NOW());";
+                $queryINSERT  = "INSERT INTO heroku_ec6c458e2e8f5f7.Furniture (SKU, name, price, height, width, length, date) VALUES ('{$sku}', '{$name}', {$price}, {$height}, {$width}, {$length}, NOW());";
                 $conn->query($queryINSERT);
                 $_SESSION['success'] = true;
                 header("Location: /");

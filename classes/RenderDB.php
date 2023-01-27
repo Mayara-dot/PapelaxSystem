@@ -8,7 +8,7 @@ class RenderDB extends DB_CONNECT {
     }
     public function renderDVD() {
         $connection = $this->getConnection();
-        $query = "SELECT * FROM SCANDIWEB.DVD;";
+        $query = "SELECT * FROM heroku_ec6c458e2e8f5f7.DVD;";
         $result = mysqli_query($connection, $query);
         if (mysqli_num_rows($result) > 0) {
             // output data of each row
@@ -29,7 +29,7 @@ class RenderDB extends DB_CONNECT {
 
     public function renderBook() {
       $connection = $this->getConnection();
-      $query = "SELECT * FROM SCANDIWEB.Book;";
+      $query = "SELECT * FROM heroku_ec6c458e2e8f5f7.Book;";
       $result = mysqli_query($connection, $query);
       if (mysqli_num_rows($result) > 0) {
           // output data of each row
@@ -50,7 +50,7 @@ class RenderDB extends DB_CONNECT {
 
   public function renderFurniture() {
     $connection = $this->getConnection();
-    $query = "SELECT * FROM SCANDIWEB.Furniture;";
+    $query = "SELECT * FROM heroku_ec6c458e2e8f5f7.Furniture;";
     $result = mysqli_query($connection, $query);
     if (mysqli_num_rows($result) > 0) {
         // output data of each row
