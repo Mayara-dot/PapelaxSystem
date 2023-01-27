@@ -1,8 +1,10 @@
 const DVDForm = document.querySelector('#DVDForm');
 const FurnitureForm = document.querySelector('#FurnitureForm');
 const BookForm = document.querySelector('#BookForm');
-
-function displayDVDForm() {
+function myFunction() {
+    var som = document.getElementById('productType');
+    var somevalue = som.value;
+    if(somevalue == "DVD") {
     //remove the style attribute for de DVD Form
     DVDForm.removeAttribute('style');
     //set the style attribute for Furniture Form and Book Form
@@ -14,23 +16,7 @@ function displayDVDForm() {
     document.getElementById('length').removeAttribute('required');
     //remove required attribute from Book Form
     document.getElementById('weight').removeAttribute('required');
-
-}
-
-function displayFurnitureForm() {
-    //remove the style attribute for de Furniture Form
-    FurnitureForm.removeAttribute('style');
-    //set the style attribute for DVD Form and Book Form
-    DVDForm.setAttribute('style', 'display:none');
-    BookForm.setAttribute('style', 'display:none');
-    //remove required attribute from DVD Form
-    document.getElementById('size').removeAttribute('required');
-     //remove required attribute from Book Form
-    document.getElementById('weight').removeAttribute('required');
-
-}
-
-function displayBookForm() {
+    } else if (somevalue == "Book") {
     //remove the style attribute for de Book Form
     BookForm.removeAttribute('style');
     //set the style attribute for Furniture Form and DVD Form
@@ -42,4 +28,17 @@ function displayBookForm() {
     document.getElementById('height').removeAttribute('required');
     document.getElementById('width').removeAttribute('required');
     document.getElementById('length').removeAttribute('required');
+
+    } else {
+        //remove the style attribute for de Furniture Form
+        FurnitureForm.removeAttribute('style');
+        //set the style attribute for DVD Form and Book Form
+        DVDForm.setAttribute('style', 'display:none');
+        BookForm.setAttribute('style', 'display:none');
+        //remove required attribute from DVD Form
+        document.getElementById('size').removeAttribute('required');
+        //remove required attribute from Book Form
+        document.getElementById('weight').removeAttribute('required');
+
+    }
 }
