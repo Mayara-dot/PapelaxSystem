@@ -40,6 +40,7 @@ session_start();
 
         <label for="productType">Type Switcher</label>
         <select name="productType" id="productType" onchange="displayForm()">
+            <option value="..." id="">...</option>
             <option value="DVD" id="DVD">DVD</option>
             <option value="Furniture" id="Furniture">Furniture</option>
             <option value="Book" id="Book">Book</option>
@@ -69,7 +70,7 @@ session_start();
     </div>
     <script src="/static/js/script.js"></script>
     <script>
-        //$('option[value="Furniture"]').prop('selected', true);
+        $('option[value="..."]').prop('selected', true);
         // JQuery to set Furniture option as default value, because attribute 'selected' was not working properly
     </script>
 </body>
