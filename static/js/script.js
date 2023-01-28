@@ -1,9 +1,9 @@
 const DVDForm = document.querySelector('#DVDForm');
 const FurnitureForm = document.querySelector('#FurnitureForm');
 const BookForm = document.querySelector('#BookForm');
-function myFunction() {
-    var som = document.getElementById('productType');
-    var somevalue = som.value;
+function displayForm() {
+    var some = document.getElementById('productType');
+    var somevalue = some.value;
     if(somevalue == "DVD") {
         //remove the style attribute for de DVD Form
         DVDForm.removeAttribute('style');

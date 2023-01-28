@@ -39,12 +39,12 @@ session_start();
         <input type="decimal" name="price" id="price" required><br>
 
         <label for="productType">Type Switcher</label>
-        <select name="productType" id="productType" onchange="myFunction()">
+        <select name="productType" id="productType" onchange="displayForm()">
             <option value="DVD" id="DVD">DVD</option>
             <option value="Furniture" id="Furniture">Furniture</option>
             <option value="Book" id="Book">Book</option>
         </select>
-        <div id="DVDForm">
+        <div id="DVDForm" style="display: none;">
             <label for="size">Size (MB)</label>
             <input type="number" name="size" id="size" required>
             <p>Please, provide size(MB).</p>
