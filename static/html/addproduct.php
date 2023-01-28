@@ -40,16 +40,16 @@ session_start();
 
         <label for="productType">Type Switcher</label>
         <select name="productType" id="productType" onchange="myFunction()">
-            <option value="DVD" id="DVD" selected>DVD</option>
-            <option value="Furniture" id="Furniture" >Furniture</option>
+            <option value="DVD" id="DVD" >DVD</option>
+            <option value="Furniture" id="Furniture" selected>Furniture</option>
             <option value="Book" id="Book" >Book</option>
         </select>
-        <div id="DVDForm">
+        <div id="DVDForm" style="display: none;">
             <label for="size">Size (MB)</label>
             <input type="number" name="size" id="size" required>
             <p>Please, provide size(MB).</p>
         </div>
-        <div id="FurnitureForm" style="display: none;">
+        <div id="FurnitureForm" >
             <label for="height">Height (CM)</label>
             <input type="number" name="height" id="height" required><br>
             <label for="width">Width (CM)</label>
@@ -70,8 +70,8 @@ session_start();
     </div>
     <script src="/static/js/script.js"></script>
     <script>
-        $('option[value="DVD"]').prop('selected', true);
-        // JQuery to set DVD optionas default value, because attribute 'selected' was not working properly
+        $('option[value="Furniture"]').prop('selected', true);
+        // JQuery to set Furniture option as default value, because attribute 'selected' was not working properly
     </script>
 </body>
 </html>
