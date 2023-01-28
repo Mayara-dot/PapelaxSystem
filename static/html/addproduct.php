@@ -44,7 +44,7 @@ session_start();
             <option value="DVD" id="DVD" selected>DVD</option>
             <option value="Book" id="Book" >Book</option>
         </select>
-        <div id="DVDForm">
+        <div id="DVDForm" style="display: none;">
             <label for="size">Size (MB)</label>
             <input type="number" name="size" id="size" required>
             <p>Please, provide size(MB).</p>
